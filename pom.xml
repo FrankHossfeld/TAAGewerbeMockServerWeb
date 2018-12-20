@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>de.gothaer.gwt.taa</groupId>
+  <artifactId>TAAGewerbeMockServerWeb</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <packaging>war</packaging>
+
+  <name>TAAGewerbeMockServerWeb</name>
+
+  <description>Mock Server für den TAA Gewerbe</description>
+  <url>https://basicauthsecure.gothaer.de/app/svn/TAAGesund/TAAGewerbeMockServerWeb</url>
+
+  <developers>
+    <developer>
+      <name>Lukas Chrissty-Schmidt</name>
+    </developer>
+    <developer>
+      <name>Frank Hossfeld</name>
+    </developer>
+  </developers>
+
+  <properties>
+    <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+
+    <baseSenchaGxt.version>1.0-SNAPSHOT</baseSenchaGxt.version>
+    <taaGewerbeDTOJava.version>1.0-SNAPSHOT</taaGewerbeDTOJava.version>
+
+    <jackson.core.version>2.9.5</jackson.core.version>
+    <jackson.databind.version>2.9.5</jackson.databind.version>
+    <jackson.jodatime.version>2.9.5</jackson.jodatime.version>
+    <jackson.media.json.version>2.27</jackson.media.json.version>
+    <jackson.json.provider.version>2.9.6</jackson.json.provider.version>
+    <jackson.version>2.9.1.1</jackson.version>
+    <javax.ws.rs-api.version>2.1</javax.ws.rs-api.version>
+    <jersey.version>2.27</jersey.version>
+
+    <tomcat.version>8.5.23</tomcat.version>
+
+    <!-- Maven -->
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+
+    <plugin.version.maven.compiler>3.5.1</plugin.version.maven.compiler>
+    <plugin.version.maven.war>3.2.0</plugin.version.maven.war>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <!--<dependency>-->
+      <!--<groupId>org.glassfish.jersey</groupId>-->
+      <!--<artifactId>jersey-bom</artifactId>-->
+      <!--<version>${jersey.version}</version>-->
+      <!--<type>pom</type>-->
+      <!--<scope>import</scope>-->
+      <!--</dependency>-->
+      <!--https://mvnrepository.com/artifact/com.fasterxml.jackson/jackson-parent-->
+      <dependency>
+        <groupId>com.fasterxml.jackson</groupId>
+        <artifactId>jackson-parent</artifactId>
+        <version>${jackson.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>de.gothaer.gwt</groupId>
+      <artifactId>BaseSenchaGXTConfigJava</artifactId>
+      <version>${baseSenchaGxt.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>de.gothaer.gwt.taa</groupId>
+      <artifactId>TAAGewerbeDTOJava</artifactId>
+      <version>${taaGewerbeDTOJava.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet</artifactId>
+      <version>${jersey.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.jersey.inject</groupId>
+      <artifactId>jersey-hk2</artifactId>
+      <version>${jersey.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.json/json -->
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20171018</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-common -->
+    <dependency>
+      <groupId>org.glassfish.jersey.core</groupId>
+      <artifactId>jersey-common</artifactId>
+      <version>${jersey.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-json-jackson -->
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-json-jackson</artifactId>
+      <version>2.26</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet-core</artifactId>
+      <version>${jersey.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>${jackson.core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.databind.version}</version>
+    </dependency>
+    <!--<dependency>-->
+    <!--<groupId>com.fasterxml.jackson.datatype</groupId>-->
+    <!--<artifactId>jackson-datatype-joda</artifactId>-->
+    <!--<version>${jackson.jodatime.version}</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+    <!--<groupId>org.glassfish.jersey.media</groupId>-->
+    <!--<artifactId>jersey-media-json-jackson</artifactId>-->
+    <!--<version>${jackson.media.json.version}</version>-->
+    <!--</dependency>-->
+    <dependency>
+      <groupId>com.fasterxml.jackson.jaxrs</groupId>
+      <artifactId>jackson-jaxrs-json-provider</artifactId>
+      <version>${jackson.json.provider.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
+    <dependency>
+      <groupId>javax.ws.rs</groupId>
+      <artifactId>javax.ws.rs-api</artifactId>
+      <version>2.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.jetty</groupId>
+          <artifactId>jetty-maven-plugin</artifactId>
+          <configuration>
+            <!-- set port -->
+            <httpConnector>
+              <port>4040</port>
+            </httpConnector>
+            <scanIntervalSeconds>5</scanIntervalSeconds>
+            <webApp>
+              <!-- set context path -->
+              <contextPath>/app/TrGesundServicesMock</contextPath>
+              <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
+                <resourcesAsCSV>${basedir}/src/main/webapp/</resourcesAsCSV>
+              </baseResource>
+            </webApp>
+            <contextXml>${basedir}/src/main/jettyconf/context.xml</contextXml>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <configuration>
+            <addWarDependenciesInClassloader>false</addWarDependenciesInClassloader>
+            <path>/</path>
+            <uriEncoding>UTF-8</uriEncoding>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
