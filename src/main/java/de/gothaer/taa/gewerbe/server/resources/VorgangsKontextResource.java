@@ -54,11 +54,11 @@ import java.util.*;
 @Path("/vorgangsKontext")
 public class VorgangsKontextResource {
 
-  private static final GsKeyValue                 AUSWAHL_1 = new GsKeyValue("1",
-                                                                             "Plusbaustein I");
-  private static final GsKeyValue                 AUSWAHL_0 = new GsKeyValue("0",
-                                                                             "kein Plusbaustein");
-  private static int laufendeNummer = 0;
+  private static final GsKeyValue                 AUSWAHL_1      = new GsKeyValue("1",
+                                                                                  "Plusbaustein I");
+  private static final GsKeyValue                 AUSWAHL_0      = new GsKeyValue("0",
+                                                                                  "kein Plusbaustein");
+  private static       int                        laufendeNummer = 0;
   private              TaaVorgangskontextResponse response01;
   /* Id des VorgangsKontext - zu Testzweckn */
   private              String                     vorgangsIdModel;
@@ -76,10 +76,10 @@ public class VorgangsKontextResource {
   private              boolean                    toolTipOfTheDayAlreadyShown;
   /* Datum an dem der ToolTip of the Day gezeigt wurde */
   private              Date                       toolTipOfTheDayShownAt;
-  private TaaVorgangskontextResponse vorgangsKontextPartner;
-  private ApplicationContext         applicationContext;
-  private VKdaten      vkDaten;
-  private AntragStatus antragsSatus = AntragStatus.TARIFIERT;
+  private              TaaVorgangskontextResponse vorgangsKontextPartner;
+  private              ApplicationContext         applicationContext;
+  private              VKdaten                    vkDaten;
+  private              AntragStatus               antragsSatus   = AntragStatus.TARIFIERT;
 
   @POST
   @Path("/get")

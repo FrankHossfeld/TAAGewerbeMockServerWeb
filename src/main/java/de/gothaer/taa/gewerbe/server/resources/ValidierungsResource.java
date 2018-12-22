@@ -71,7 +71,7 @@ public class ValidierungsResource {
     response.setStatus(status);
 
     // Hier künnen noch 'echte' Prüfungen eingebaut werden!
-//    Antrag tAntrag = pRequest.getAntrag();
+    //    Antrag tAntrag = pRequest.getAntrag();
 
     //    if (tAntrag.getBetriebsHaftpflichtVersicherung() != null) {
     //      for (BhvWagnis tWagnis : tAntrag.getBetriebsHaftpflichtVersicherung()

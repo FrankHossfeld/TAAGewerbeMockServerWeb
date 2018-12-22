@@ -76,7 +76,7 @@ public class ToolTipResource {
 
     tooltTipList.add(new GsToolTip("TIPGENERATIONSWECHSEL",
                                    "Hinweis",
-        //                                   "Mehr zur man. Generationswechsel finden Sie <a href=\"http://www.google.de\" target=\"_blank\">hier</a>.",
+                                   //                                   "Mehr zur man. Generationswechsel finden Sie <a href=\"http://www.google.de\" target=\"_blank\">hier</a>.",
                                    "<b>Weitergehende Informationen zum Generationswechsel finden Sie in der GGP Wissensdatenbank: </b><a href=\"http://www.aonet.gothaer.de/content/gosmart/de/sad/sad_detailseite_5253.html\" target=\"_blank\" >hier</a>.",
                                    ""));
 

@@ -45,7 +45,6 @@ public class ApplicationContextResource {
     System.out.println("******************************");
     System.out.println("*");
 
-
     return response;
   }
 
