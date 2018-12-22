@@ -14,7 +14,6 @@ import javax.ws.rs.Produces;
 @Path("/applicationContext")
 public class ApplicationContextResource {
 
-  //   private ApplicationContext applicationContext = ApplicationContext.TAA;
   public ApplicationContext applicationContext         = ApplicationContext.TR;
   public boolean            testMode                   = true;
   public boolean            showCheckboxEuUnterschrift = true;
@@ -39,6 +38,13 @@ public class ApplicationContextResource {
     Status status = new Status();
     status.setReturncode(ReturnCode.OK);
     response.setStatus(status);
+
+    System.out.println("**");
+    System.out.println("******************************");
+    System.out.println("response: getApplicaitonContext -> >>" + applicationContext + "<<");
+    System.out.println("******************************");
+    System.out.println("*");
+
 
     return response;
   }

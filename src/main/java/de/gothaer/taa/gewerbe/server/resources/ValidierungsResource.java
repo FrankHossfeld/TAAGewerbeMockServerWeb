@@ -7,6 +7,7 @@ import de.gothaer.taa.gewerbe.ui.shared.s2.model.Antrag;
 import de.gothaer.taa.gewerbe.ui.shared.s2.model.produkte.bhv.BhvWagnis;
 import de.gothaer.taa.gewerbe.ui.shared.s2.transport.ReturnCode;
 import de.gothaer.taa.gewerbe.ui.shared.s2.transport.Status;
+import de.gothaer.taa.gewerbe.ui.shared.s2.transport.request.TaaValidiereVermittlerAbhaengigeDatenRequest;
 import de.gothaer.taa.gewerbe.ui.shared.s2.transport.request.TaaValidierungsRequest;
 import de.gothaer.taa.gewerbe.ui.shared.s2.transport.response.TaaValidierungsResponse;
 import de.gothaer.taa.gewerbe.ui.shared.s2.widgetconfig.WidgetAnnotationConstants;
@@ -62,7 +63,7 @@ public class ValidierungsResource {
   @Path("/validiereVermittlerAbhaengigeDaten")
   @Produces("application/json")
   @Consumes("application/json")
-  public TaaValidierungsResponse validiereVermittlerAbhaengigeDaten(TaaValidierungsRequest pRequest) {
+  public TaaValidierungsResponse validiereVermittlerAbhaengigeDaten(TaaValidiereVermittlerAbhaengigeDatenRequest pRequest) {
 
     TaaValidierungsResponse response = new TaaValidierungsResponse();
     Status status = new Status();
@@ -70,7 +71,7 @@ public class ValidierungsResource {
     response.setStatus(status);
 
     // Hier künnen noch 'echte' Prüfungen eingebaut werden!
-    Antrag tAntrag = pRequest.getAntrag();
+//    Antrag tAntrag = pRequest.getAntrag();
 
     //    if (tAntrag.getBetriebsHaftpflichtVersicherung() != null) {
     //      for (BhvWagnis tWagnis : tAntrag.getBetriebsHaftpflichtVersicherung()
