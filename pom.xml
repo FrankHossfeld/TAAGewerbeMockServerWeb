@@ -53,12 +53,12 @@
 
   <dependencies>
     <dependency>
-      <groupId>de.gothaer.gwt</groupId>
+      <groupId>de.gothaer.taa.gewerbe</groupId>
       <artifactId>BaseSenchaGXTConfigJava</artifactId>
       <version>${baseSenchaGxt.version}</version>
     </dependency>
     <dependency>
-      <groupId>de.gothaer.gwt.taa</groupId>
+      <groupId>de.gothaer.taa.gewerbe</groupId>
       <artifactId>TAAGewerbeDTOJava</artifactId>
       <version>${taaGewerbeDTOJava.version}</version>
     </dependency>
